@@ -1,0 +1,17 @@
+/* ==============================
+BUTTON STYLES
+ ================================ */
+.btn {
+	font-size: $font-size;
+	display: inline-block;
+	padding: 13px 10px;
+	cursor: pointer;
+	transition: all 0.25s ease-in-out;
+	text-decoration: none;
+	border: 1px solid transparent;
+	background-color: transparent;
+	border-radius: 5px;
+	color: #ffffff;
+	font-weight: 400;
+	text-align: center;
+}
