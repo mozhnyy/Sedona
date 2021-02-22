@@ -1,0 +1,74 @@
+// Mobile First
+.footer {
+	padding-top: 23px;
+	padding-bottom: 36px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	@media (min-width: 768px) {
+		flex-direction: row;
+		justify-content: space-between;
+		align-content: center;
+	}
+	&-contacts {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		font-size: 21px;
+		line-height: 26px;
+		text-align: center;
+		margin-bottom: 20px;
+		@media (min-width: 768px) {
+			margin-bottom: 0;
+		}
+		&__link {
+			max-width: 251px;
+			width: 100%;
+			font-weight: 700;
+			&:nth-child(1) {
+				margin-bottom: 10px;
+			}
+		}
+	}
+	.social {
+		display: flex;
+		max-width: 150px;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 20px;
+		@media (min-width: 768px) {
+			margin-bottom: 0;
+		}
+		&__item {
+		}
+		&__link {
+			background: #81b3d2;
+			width: 46px;
+			height: 48px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			&:hover {
+				background: #669ec0;
+				transition: $transition;
+			}
+			&:active {
+				background: #5496bd;
+			}
+			&:active path {
+				opacity: 0.3;
+				transition: $transition;
+			}
+		}
+	}
+
+	.copyright {
+		font-size: 14px;
+		text-transform: uppercase;
+		display: flex;
+		width: 197px;
+		justify-content: space-between;
+		align-items: center;
+	}
+}

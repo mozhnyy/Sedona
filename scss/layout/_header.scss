@@ -1,0 +1,23 @@
+.header {
+	.nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.menu {
+		display: flex;
+		max-width: 326px;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+		&__link {
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+	}
+
+	.logo {
+		&__image {
+		}
+	}
+}

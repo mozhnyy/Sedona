@@ -1,0 +1,47 @@
+.features {
+	text-align: center;
+	padding-top: 42px;
+	.features__head {
+		font-size: 21px;
+		line-height: 26px;
+		max-width: 470px;
+		width: 100%;
+		margin: auto;
+		font-weight: 700;
+		margin-bottom: 15px;
+	}
+	.features__text {
+		max-width: 519px;
+		width: 100%;
+		margin: auto;
+		margin-bottom: 51px;
+	}
+	.features-row {
+		&__info {
+		}
+		&__head {
+		}
+		&__number {
+		}
+		&__text {
+		}
+		&__image {
+		}
+	}
+
+	.features-advise {
+		&__item {
+		}
+		&__image {
+		}
+		&__head {
+		}
+		&__text {
+		}
+	}
+
+	.features-list {
+		&__item {
+		}
+	}
+}
