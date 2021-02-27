@@ -1,7 +1,7 @@
 .features {
 	text-align: center;
 	padding-top: 42px;
-	.features__head {
+	&__head {
 		font-size: 21px;
 		line-height: 26px;
 		max-width: 470px;
@@ -10,38 +10,51 @@
 		font-weight: 700;
 		margin-bottom: 15px;
 	}
-	.features__text {
+	&__text {
 		max-width: 519px;
 		width: 100%;
 		margin: auto;
 		margin-bottom: 51px;
+		line-height: 26px;
 	}
-	.features-row {
-		&__info {
+	&-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+	&-block {
+		padding-top: 50px;
+		&--blue {
+			background: #81b3d2;
+			color: #fff;
 		}
 		&__head {
+			margin-bottom: 25px;
 		}
 		&__number {
+			margin-bottom: 23px;
 		}
 		&__text {
+			max-width: 300px;
+			width: 100%;
+			margin: auto;
+			margin-bottom: 54px;
 		}
-		&__image {
+		&--icon {
+			.features-block__text {
+				margin-bottom: 80px;
+			}
+		}
+		&--grey {
+			background: #eeeeee;
 		}
 	}
 
-	.features-advise {
-		&__item {
+	&-image {
+		&--right {
+			grid-column: 2/4;
 		}
-		&__image {
-		}
-		&__head {
-		}
-		&__text {
-		}
-	}
-
-	.features-list {
-		&__item {
+		&--left {
+			grid-column: 1/3;
 		}
 	}
 }

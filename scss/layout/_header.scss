@@ -1,8 +1,29 @@
 .header {
+	position: relative;
 	.nav {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+	}
+	.logo--mobile {
+		@media (min-width: 768px) {
+			display: none;
+		}
+		img {
+			@include fluid(
+				"width",
+				(
+					320px: 85px,
+					767px: 138px,
+				)
+			);
+		}
+	}
+	.burger {
+		display: block;
+		@media (min-width: 768px) {
+			display: none;
+		}
 	}
 	.menu {
 		display: flex;
@@ -16,8 +37,26 @@
 		}
 	}
 
-	.logo {
-		&__image {
+	.logo--desktop {
+		@media (min-width: 768px) {
+			position: relative;
+			top: 7px;
+			width: 138px;
+			flex-shrink: 0;
+		}
+	}
+	&__wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: none;
+		width: 100%;
+		@media (min-width: 768px) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			position: static;
+			max-height: 56px;
 		}
 	}
 }
