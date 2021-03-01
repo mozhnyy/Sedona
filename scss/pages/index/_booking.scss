@@ -3,6 +3,9 @@
 	padding-top: 58px;
 	&__inner {
 		position: relative;
+		max-width: 568px;
+		margin: auto;
+		width: 100%;
 		overflow: hidden;
 	}
 	&__head {
@@ -24,17 +27,27 @@
 		font-size: 21px;
 		line-height: 26px;
 		font-weight: 700;
+		cursor: pointer;
 	}
 
 	&-form {
-		// position: absolute;
-		// bottom: 0;
-		// left: 0;
-		// transform: translateY(100%);
+		position: absolute;
+		top: 195px;
+		left: 0;
 		max-width: 568px;
 		width: 100%;
 		margin: auto;
 		padding: 55px;
+		background-color: #fff;
+		box-shadow: 0px 7px 15px rgba(0, 1, 1, 0.15);
+		z-index: 10;
+		display: none;
+		@media (max-width: 576px) {
+			padding: 25px;
+		}
+		&.show {
+			display: block;
+		}
 		&__btn {
 			width: 100%;
 			padding: 16px;
@@ -48,12 +61,14 @@
 	}
 
 	&__label--date {
-		display: block;
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
 		font-weight: 700;
 		margin-bottom: 30px;
+		@media (max-width: 576px) {
+			display: block;
+			text-align: left;
+		}
 
 		input {
 			max-width: 346px;
@@ -63,36 +78,70 @@
 			font-weight: 700;
 			text-transform: uppercase;
 			font-size: 14px;
+			min-height: 38px;
+			margin-left: 20px;
+			@media (max-width: 576px) {
+				margin-top: 10px;
+				max-width: 100%;
+				margin-left: 0;
+			}
 		}
 	}
 	&-label__wrapper {
 		display: flex;
-		justify-content: space-between;
 		width: 100%;
-		// & > * {
-		// 	width: 48%;
-		// }
+		margin-bottom: 54px;
+		@media (max-width: 576px) {
+			display: block;
+		}
+		& > * {
+			width: 50%;
+			@media (max-width: 576px) {
+				width: 100%;
+			}
+		}
 	}
 	&__label--type {
 		font-weight: 700;
 		display: flex;
+		align-items: center;
+		@media (max-width: 576px) {
+			margin-bottom: 10px;
+		}
 		.label-text {
 			display: block;
+			&--adult {
+				margin-right: 40px;
+				@media (max-width: 576px) {
+					margin-right: auto;
+				}
+			}
+			&--child {
+				margin-right: 20px;
+				margin-left: auto;
+				@media (max-width: 576px) {
+					margin-right: auto;
+					margin-left: 0;
+				}
+			}
 		}
 		.form-group {
 			max-width: 114px;
-			width: 100%;
-			position: relative;
+			display: flex;
+			& > * {
+				width: calc(100% / 3);
+				min-height: 38px;
+				background: #f2f2f2;
+			}
 			.plus,
 			.minus {
-				position: absolute;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 			}
 
 			input {
-				max-width: 36px;
-				width: 100%;
-				background: #fff;
-				padding: 6px 39px;
+				text-align: center;
 			}
 		}
 	}

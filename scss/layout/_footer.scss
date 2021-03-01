@@ -1,12 +1,26 @@
 // Mobile First
 .footer {
+	background-color: rgba(255, 255, 255, 0.9);
 	padding-top: 23px;
 	padding-bottom: 36px;
-	@media (min-width: 768px) {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-content: center;
+	&-index {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 10;
+
+		width: 100%;
+		padding-top: 23px;
+		padding-bottom: 36px;
+	}
+	&-grid {
+		@media (min-width: 768px) {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-content: center;
+		}
 	}
 	&-contacts {
 		// display: flex;
@@ -75,18 +89,4 @@
 	&__image {
 		margin-left: 8px;
 	}
-}
-
-.footer-index {
-	// position: absolute;
-	// bottom: 0;
-	// left: 0;
-	// background: #fff;
-	// opacity: 0.9;
-	// width: 100%;
-	// max-width: 1056px;
-	// margin-left: auto;
-	// margin-right: auto;
-	// padding-left: 10px;
-	// padding-right: 10px;
 }

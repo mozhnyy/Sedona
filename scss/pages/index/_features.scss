@@ -20,9 +20,13 @@
 	&-grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
+		@media (max-width: 768px) {
+			display: block;
+		}
 	}
 	&-block {
 		padding-top: 50px;
+		padding-bottom: 54px;
 		&--blue {
 			background: #81b3d2;
 			color: #fff;
@@ -37,7 +41,6 @@
 			max-width: 300px;
 			width: 100%;
 			margin: auto;
-			margin-bottom: 54px;
 		}
 		&--icon {
 			.features-block__text {
@@ -50,6 +53,13 @@
 	}
 
 	&-image {
+		height: 100%;
+		object-fit: cover;
+		@media (max-width: 768px) {
+			height: auto;
+			object-fit: unset;
+		}
+
 		&--right {
 			grid-column: 2/4;
 		}

@@ -2,8 +2,10 @@
 @import "abstracts/mixins";
 @import "themes/normalize";
 @import "themes/themes";
+@import "themes/rating";
 @import "layout/header";
 @import "layout/footer";
 @import "pages/index/intro";
 @import "pages/index/features";
 @import "pages/index/booking";
+@import "pages/catalog/catalog";

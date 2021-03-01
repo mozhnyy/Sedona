@@ -1,8 +1,22 @@
 .intro {
-	padding-top: 77px;
-	padding-bottom: 80px;
-	background-image: url("../images/intro/background.jpg");
+	padding: 77px 10px 80px;
+	background: url("../images/intro/background.jpg") no-repeat center/cover;
 	text-align: center;
-	&__image {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&::after {
+		position: absolute;
+		content: "";
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		min-height: 57px;
+		background: url("../images/intro/Shape.svg") no-repeat center;
 	}
+}
+
+.logo--desktop {
+	z-index: 10;
 }
