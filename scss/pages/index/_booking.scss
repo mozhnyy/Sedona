@@ -28,6 +28,13 @@
 		line-height: 26px;
 		font-weight: 700;
 		cursor: pointer;
+		&:hover,
+		&:focus {
+			background: #604e43;
+		}
+		&:active {
+			background: #503e33;
+		}
 	}
 
 	&-form {
@@ -57,6 +64,13 @@
 			line-height: 26px;
 			font-weight: 700;
 			text-transform: uppercase;
+			&:hover,
+			&:focus {
+				background: #669ec0;
+			}
+			&:active {
+				background: #5496bd;
+			}
 		}
 	}
 
@@ -65,9 +79,25 @@
 		align-items: center;
 		font-weight: 700;
 		margin-bottom: 30px;
+		position: relative;
 		@media (max-width: 576px) {
 			display: block;
 			text-align: left;
+		}
+
+		.label__btn {
+			position: absolute;
+			top: 7px;
+			right: 8px;
+			&:hover path,
+			&:focus path {
+				fill: #000;
+				transition: $transition;
+			}
+			&:active path {
+				fill: #81b3d2;
+				transition: $transition;
+			}
 		}
 
 		input {
@@ -80,6 +110,11 @@
 			font-size: 14px;
 			min-height: 38px;
 			margin-left: 20px;
+			outline: none;
+			&:focus {
+				background: #fff;
+				border: 2px solid #e5e5e5;
+			}
 			@media (max-width: 576px) {
 				margin-top: 10px;
 				max-width: 100%;
@@ -138,6 +173,19 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
+			}
+
+			.minus:hover path,
+			.minus:focus path,
+			.plus:hover path,
+			.plus:focus path {
+				fill: #000;
+				transition: $transition;
+			}
+			.minus:active path,
+			.plus:active path {
+				fill: #81b3d2;
+				transition: $transition;
 			}
 
 			input {

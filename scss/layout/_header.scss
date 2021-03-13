@@ -49,8 +49,9 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		display: none;
 		width: 100%;
+		max-height: 0;
+		overflow: hidden;
 		@media (min-width: 768px) {
 			display: flex;
 			justify-content: space-between;
@@ -60,3 +61,56 @@
 		}
 	}
 }
+
+.header__wrapper-open {
+	max-height: 500px;
+	z-index: 10;
+	top: 70px;
+	display: block;
+	.logo--desktop {
+		display: none;
+	}
+	.menu {
+		max-width: 100%;
+		display: block;
+		text-align: center;
+		&__item {
+			max-width: 100%;
+		}
+		&__item {
+			margin-bottom: 10px;
+		}
+	}
+}
+// Hamburger
+.hamburger {
+	cursor: pointer;
+	@media (min-width: $md) {
+		display: none;
+	}
+	&:hover {
+		opacity: 0.7;
+	}
+}
+// .header__wrapper {
+// 	background: #eeeeee;
+// 	position: absolute;
+// 	max-height: 0;
+// 	overflow: hidden;
+// 	left: 0;
+// 	top: 114px;
+// 	width: 100%;
+// 	transition: max-height 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+// 	@media (min-width: $lg) {
+// 		display: flex;
+// 		align-items: center;
+// 		flex-direction: row;
+// 		justify-content: space-between;
+// 		width: 100%;
+// 		max-width: 800px;
+// 		margin-left: 40px;
+// 		max-height: none;
+// 		position: static;
+// 		overflow: unset;
+// 	}
+// }

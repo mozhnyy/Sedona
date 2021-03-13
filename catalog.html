@@ -5,10 +5,9 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="star-rating-svg.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
 	<title>Catalog</title>
 </head>
 
@@ -21,7 +20,8 @@
 				<!-- menu -->
 				<a class="logo logo--mobile" href="index.html"><img src="images/header/logo.svg" alt="logo"
 						class="logo__image"></a>
-				<button class="burger">burger</button>
+				<button class="hamburger hamburger--elastic" aria-label="Mobile burger"><span
+						class="hamburger-box"><span class="hamburger-inner"></span></span></button>
 				<div class="header__wrapper">
 					<ul class="menu">
 						<li class="menu__item"><a href="#" class="menu__link">Информация</a></li>
@@ -46,47 +46,66 @@
 			<section class="catalog">
 				<!-- form -->
 				<form action="" class="form">
-					<!-- инфраструктура: -->
-					<fieldset class="form__fieldset">
-						<legend class="form__legend"></legend>
-						<input type="text" class="form-input">
-						<label for="" class="form-label"></label>
-						<input type="text" class="form-input">
-						<label for="" class="form-label"></label>
-						<input type="text" class="form-input">
-						<label for="" class="form-label"></label>
-					</fieldset>
-					<!-- тип жилья -->
-					<fieldset class="form__fieldset">
-						<legend class="form__legend"></legend>
-						<input type="text" class="form-input">
-						<label for="" class="form-label"></label>
-						<input type="text" class="form-input">
-						<label for="" class="form-label"></label>
-						<input type="text" class="form-input">
-						<label for="" class="form-label"></label>
-					</fieldset>
-					<!-- range-filter -->
-					<fieldset class="form__fieldset">
-						<legend class="form__legend"></legend>
-						<div class="range-filter">
-							<div class="price-controls">
-								<input type="text" class="price-controls__input price-min" name="price-min" value="0">
-								<input type="text" class="price-controls__input price-max" name="price-max"
-									value="3000">
-							</div>
-							<div class="range-controls">
-								<div class="scale">
-									<div class="bar">
+					<div class="form-inner container">
+						<!-- инфраструктура: -->
+						<fieldset class="form__fieldset form__fieldset--checkbox">
+							<legend class="form__legend">Инфраструктура:</legend>
+							<ul class="form__list">
+								<li class="form__item"><input type="checkbox" class="visually-hidden checkbox"
+										id="pool">
+									<label for="pool" class="form__label">Бассейн</label>
+								</li>
+								<li class="form__item"><input type="checkbox" class="visually-hidden checkbox"
+										id="park">
+									<label for="park" class="form__label">Парковка</label>
+								</li>
+								<li class="form__item"><input type="checkbox" class="visually-hidden checkbox"
+										id="wi-fi">
+									<label for="wi-fi" class="form__label">Wi-Fi</label>
+								</li>
+							</ul>
+						</fieldset>
+						<!-- тип жилья -->
+						<fieldset class="form__fieldset form__fieldset--checkbox">
+							<legend class="form__legend">Тип жилья:</legend>
+							<ul class="form__list">
+								<li class="form__item"><input type="checkbox" class="visually-hidden checkbox"
+										id="hostel">
+									<label for="hostel" class="form__label">Гостиница</label>
+								</li>
+								<li class="form__item"><input type="checkbox" class="visually-hidden checkbox"
+										id="motel">
+									<label for="motel" class="form__label">Мотель</label>
+								</li>
+								<li class="form__item"><input type="checkbox" class="visually-hidden checkbox"
+										id="apartments">
+									<label for="apartments" class="form__label">Апартаменты</label>
+								</li>
+							</ul>
+						</fieldset>
+						<!-- range-filter -->
+						<fieldset class="form__fieldset form__fieldset--range">
+							<legend class="form__legend">Стоимость в сутки (Р):</legend>
+
+							<div class="range__inputs">
+								<label class="range__label">
+									<div class="range__label-wrapper">
+										<span>от</span>
+										<input type="number" class="range__input range__input--start" placeholder="0">
 									</div>
-								</div>
-								<div class="toggle toggle-min"></div>
-								<div class="toggle toggle-max"></div>
+								</label>
+								<label class="range__label">
+									<div class="range__label-wrapper">
+										<span>до</span>
+										<input type="number" class="range__input range__input--end" placeholder="3000">
+									</div>
+								</label>
 							</div>
-						</div>
+							<div id="slider"></div>
 
-
-					</fieldset>
+							<button class="form__btn">Показать</button>
+						</fieldset>
+					</div>
 				</form>
 				<!-- sort -->
 				<div class="sort container">
@@ -154,7 +173,7 @@
 							</div>
 						</div>
 						<div class="result-ratio">
-							<div class="my-rating"></div>
+							<div class="rating"></div>
 							<p class="result-ratio__text">Рейтинг: 8,9</p>
 						</div>
 					</li>
@@ -176,7 +195,7 @@
 							</div>
 						</div>
 						<div class="result-ratio">
-							<div class="my-rating"></div>
+							<div class="rating"></div>
 							<p class="result-ratio__text">Рейтинг: 9,2</p>
 						</div>
 					</li>
@@ -233,8 +252,9 @@
 
 	</div>
 	<!-- /PAGE -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-	<script src="jquery.star-rating-svg.js"></script>
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/nouislider.js"></script>
+	<script src="js/jquery.star-rating-svg.js"></script>
 	<script src="js/main.js"></script>
 
 </body>
