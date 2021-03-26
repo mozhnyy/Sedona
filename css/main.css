@@ -3408,9 +3408,25 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   font-weight: 700;
   margin-bottom: 30px;
   position: relative;
+}
+
+.booking__label--date:after {
+  position: absolute;
+  content: "";
+  width: 21px;
+  height: 23px;
+  display: block;
+  background-image: url("../images/booking/calendar.png");
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 10px;
 }
 
 @media (max-width: 576px) {
@@ -3420,26 +3436,8 @@ body {
   }
 }
 
-.booking__label--date .label__btn {
-  position: absolute;
-  top: 7px;
-  right: 8px;
-}
-
-.booking__label--date .label__btn:hover path,
-.booking__label--date .label__btn:focus path {
-  fill: #000;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.booking__label--date .label__btn:active path {
-  fill: #81b3d2;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.booking__label--date input {
+.booking__input--date {
+  position: relative;
   max-width: 346px;
   width: 100%;
   padding: 6px 12px;
@@ -3452,13 +3450,13 @@ body {
   outline: none;
 }
 
-.booking__label--date input:focus {
+.booking__input--date:focus {
   background: #fff;
   border: 2px solid #e5e5e5;
 }
 
 @media (max-width: 576px) {
-  .booking__label--date input {
+  .booking__input--date {
     margin-top: 10px;
     max-width: 100%;
     margin-left: 0;

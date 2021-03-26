@@ -77,49 +77,46 @@
 	&__label--date {
 		display: flex;
 		align-items: center;
+		justify-content: space-between;
 		font-weight: 700;
 		margin-bottom: 30px;
 		position: relative;
+		&:after {
+			position: absolute;
+			content: "";
+			width: 21px;
+			height: 23px;
+			display: block;
+			background-image: url("../images/booking/calendar.png");
+			top: 50%;
+			transform: translateY(-50%);
+			right: 10px;
+		}
 		@media (max-width: 576px) {
 			display: block;
 			text-align: left;
 		}
-
-		.label__btn {
-			position: absolute;
-			top: 7px;
-			right: 8px;
-			&:hover path,
-			&:focus path {
-				fill: #000;
-				transition: $transition;
-			}
-			&:active path {
-				fill: #81b3d2;
-				transition: $transition;
-			}
+	}
+	&__input--date {
+		position: relative;
+		max-width: 346px;
+		width: 100%;
+		padding: 6px 12px;
+		background: #f2f2f2;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 14px;
+		min-height: 38px;
+		margin-left: 20px;
+		outline: none;
+		&:focus {
+			background: #fff;
+			border: 2px solid #e5e5e5;
 		}
-
-		input {
-			max-width: 346px;
-			width: 100%;
-			padding: 6px 12px;
-			background: #f2f2f2;
-			font-weight: 700;
-			text-transform: uppercase;
-			font-size: 14px;
-			min-height: 38px;
-			margin-left: 20px;
-			outline: none;
-			&:focus {
-				background: #fff;
-				border: 2px solid #e5e5e5;
-			}
-			@media (max-width: 576px) {
-				margin-top: 10px;
-				max-width: 100%;
-				margin-left: 0;
-			}
+		@media (max-width: 576px) {
+			margin-top: 10px;
+			max-width: 100%;
+			margin-left: 0;
 		}
 	}
 	&-label__wrapper {
